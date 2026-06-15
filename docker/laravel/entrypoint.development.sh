@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 
-composer install
-wait $!
+# install package 
+# composer install
+# wait $!
 php artisan key:generate
 wait $!
 php artisan migrate
