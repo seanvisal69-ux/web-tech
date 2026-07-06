@@ -1,4 +1,15 @@
-p(App)
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'admin-lte/dist/js/adminlte.min.js';
+
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import App from './App.vue'
+import router from './router'
+import { useUserStore } from '@/stores/user';
+import { apiVerify } from '@/functions/api/auth';
+
+const app = createApp(App)
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
