@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ResetPasswordNotification extends Notification
+class ResetPasswordNotification extends Notification implements ShouldQueue
 {
     use Queueable;
     private $token;
@@ -49,5 +49,3 @@ class ResetPasswordNotification extends Notification
             ->line('If you did not request a password reset, no further action is required.');
     }
 }
-    
-
